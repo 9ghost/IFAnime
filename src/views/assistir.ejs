@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('partials/header') %>
+        <link rel="stylesheet" href="css/assistir.css">
+        <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css">
+        <title>Assistindo: <%= anime.attributes.canonicalTitle %>: Episódio n. <%= episode %>
+        </title>
+</head>
+
+<body>
+    <%- include('partials/load') %>
+        <%- include('partials/navbar') %>
+        <% if(!translated.bool) { %>
+            <script>
+                $(window).on("load", function () {
+                    Swal.fire({
+                        html: "<p style='color: rgba(255, 0, 0, 1);'><strong>Oops...</strong> O servidor não encontrou esse episódio, pedimos desculpas.<p><br><img src='https://giffiles.alphacoders.com/349/34945.gif' width='200px'><br><br><i><s>Clique no botão para voltar</s><i>"
+                    })
+                        .then(() => history.back())
+                })
+            </script>
+            <% } else { %>
+            <div class="stream">
+                <h1>🎬 <%= anime.attributes.canonicalTitle %> <i>Episódio n. <%= episode %></i></h1>
+                <div id="players">
+                </div>
+
+
+                <video width="100%" height="100%" controls poster="/images/click.png" id="plyr-video" preload="metadata"
+                    style="display: block;">
+                    <source src="<%= translated.urls[0] %>" type="video/mp4" name="dublado">
+                    Seu navegador não suporta a tag de video.
+                </video>
+
+                <a href="/animes/anime/<%= anime.id %>/assistir/<%= episode - 1 %>"><button class="player-buttons"><i
+                            class="fa fa-arrow-left" aria-hidden="true"></i>
+                        Episódio anterior</button></a>
+                <a href="/animes/anime/<%= anime.id %>/assistir/<%= episode + 1 %>"><button
+                        class="player-buttons">Próximo episódio <i class="fa fa-arrow-right"
+                            aria-hidden="true"></i></button></a>
+                <a><button class="player-buttons" onclick="history.back()"><i class="fa fa-film" aria-hidden="true"></i>
+                        Todos os episodios</button></a>
+                <a><button class="player-buttons" onclick="location.reload()" id="recarregar"><i class="fa fa-refresh"
+                            aria-hidden="true"></i> Recarregar video</button></a>
+            </div>
+            <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
+            <script>
+                $(document).ready(function () {
+                    twemoji.parse(document.body)
+                    const player = new Plyr('video');
+                    const players = "<%= translated.urls %>".split(",")
+                    if (players.length > 1) {
+                        for (let i in players) {
+                            let legendado = players[i].includes('dublado') ? "Dublado" : "Legendado"
+                            $("#players").append(`<button><i class="fa fa-play-circle" aria-hidden="true"></i> Player ${parseInt(i) + 1} (${legendado})</button>`)
+                            $("#players button").eq(i).click(function () {
+                                $("video source").prop("src", players[i])
+                                $("video")[0].load()
+                            })
+                        }
+                    }
+                })
+            </script>
+            <%- include('partials/footer') %>
+            <% } %>
+</body>
+
+</html>

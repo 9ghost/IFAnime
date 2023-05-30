@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include ('partials/header') %>
+        <link rel="stylesheet" href="css/home.css">
+        <script src="js/home.js"></script>
+        <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+        <title>IFAnime</title>
+</head>
+
+<body>
+    <%- include('partials/load') %>
+        <%- include('partials/navbar') %>
+            <div class="initial-welcome"> <!-- :( -->
+                <div class="left-side">
+                    <h1>IFAnime</h1>
+                    <h4>Fale sobre animes, mangás, assista a seus episódios favoritos tudo em um só lugar.</h4>
+                    <div class="buttons-landing">
+                        <button>Criar Conta</button>
+                        <button>Assistir</button>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <img id="personagem">
+                </div>
+                <div class="animacao">
+                <div class="barras" style="top: 1%; width: 100px; height: 100px;"></div>
+                <div class="barras" style="top: 10%; width: 100px; height: 100px;"></div>
+                <div class="barras" style="top: 30%; width: 150px; height: 150px;"></div>
+                <div class="barras" style="top: 40%; width: 75px; height: 75px;"></div>
+                <div class="barras" style="top: 50%; width: 125px; height: 125px;"></div>
+                </div>
+            </div>
+            </div>
+            </div>
+            <%- include('partials/footer') %>
+</body>
+
+</html>

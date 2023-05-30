@@ -1,0 +1,113 @@
+/* 
+    Estilo da página de resultados da pesquisa (animes)
+*/
+
+
+section {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.cards {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px 0px;
+}
+
+section>h1 {
+    font-size: 50px;
+    color: white;
+}
+
+.card {
+    width: 30%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    display: inline-flex;
+    max-width: 100%;
+    border-radius: 8px;
+    height: 300px;
+    transition: width 2.0s ease;
+    border-right: 4px solid rgb(98, 236, 98);
+    flex-direction: row;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.7);
+    background: #2c2f33;
+}
+
+.card-right>a>button:hover {
+    box-shadow: 0px 0px 20px rgb(98, 236, 98);
+}
+.card-right>a>button {
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    cursor: pointer;
+    background-color: rgb(98, 236, 98);
+    box-shadow: none;
+    transition: box-shadow 1s;
+    border: 1px solid white;
+}
+
+.card-right {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow:hidden;
+    line-break: loose;
+    line-height: 23px;
+    flex-direction: column;
+    text-align: justify;
+    margin-left: 1pc;
+    margin-bottom: 1pc;
+    margin-right: 1pc;
+}
+
+.card-right>h1 {
+    font-weight: 100;
+    color: white;
+}
+
+.card-right>p {
+    color: white;
+    font-weight: 100;
+    min-width: 100% !important;
+    height: 50px;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.card> a >img {
+    border-radius: 8px;
+}
+
+.card:hover {
+    width: 39.5%;
+}
+
+@media screen and (max-width: 1320px) {
+    .cards {
+        column-gap: 5px;
+    }
+    .card {
+        width: 40%;
+    }
+    .card:hover {
+        width: 59%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cards {
+        width: 90%;
+        padding: 0px;
+        align-items: center;
+        justify-content: center;
+    }
+    .card {
+        width: 60%;
+    }
+    .card:hover {
+        width: 100%;
+    }
+}
