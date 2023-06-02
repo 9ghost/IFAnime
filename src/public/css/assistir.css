@@ -2,6 +2,7 @@
     color: white;
     font-weight: 100;
 }
+
 .stream {
     width: 100%;
     padding: 25%;
@@ -13,10 +14,12 @@
     padding-top: 56.25%;
     position: relative;
 }
+
 #players button:hover {
     box-shadow: 0px 0px 0px 0px rgb(153, 5, 5);
     background: rgb(199, 5, 5);
 }
+
 #players button {
     transition: all 1s;
     box-shadow: 0px 5px 0px 1px rgb(153, 5, 5);
@@ -39,7 +42,28 @@
     border-radius: 3px;
 }
 
-/* botões do plyr */
+/* Botões do Plyr */
 :root {
-    --plyr-color-main: red
+    --plyr-color-main: red;
+}
+
+@media screen and (max-width: 1090px) {
+    .stream {
+        padding: 10%;
+        margin-top: -15%;
+    }
+
+    .iframe-container {
+        padding-top: 56.25%;
+    }
+
+    #players button {
+        margin-bottom: 5px;
+        padding: 8px;
+    }
+
+    .player-buttons {
+        margin-top: 10px;
+        padding: 8px;
+    }
 }

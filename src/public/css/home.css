@@ -1,7 +1,3 @@
-/* 
-    Estilo da página principal (/)
-*/
-
 .initial-welcome {
     overflow: hidden;
     z-index: 1;
@@ -9,51 +5,50 @@
     width: 100%;
     background: #141618;
     display: flex;
-    justify-content: space-between;
-}
-
-.left-side h1 {
-    margin-left: 70px !important;
-    width: 100%;
-    font-weight: 100;
-    color: rgb(98, 236, 98);
-    margin: 10px;
-    font-size: 80px;
-}
-
-.left-side h4 {
-    margin-bottom: 30px !important;
-    margin-left: 70px !important;
-    width: 100%;
-    font-weight: 100;
-    color: gray;
-    margin: 5px;
-    font-size: 25px;
-}
-
-.left-side {
-    z-index: 2;
-    width: 50%;
-    display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
+.left-side h1 {
+    margin: 10px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.left-side h4 {
+    margin: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.left-side {
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
 .right-side img {
-    width: 60%;
-    margin: 150px;
+    width: 100%;
+    margin: 50px 0;
 }
 
 .right-side {
     z-index: 2;
-    width: 50%;
+    width: 100%;
     display: flex;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
+
 .buttons-landing:first-child {
     background: red;
 }
+
 .buttons-landing button {
     cursor: pointer;
     font-size: large;
@@ -61,11 +56,16 @@
     width: 190px;
     border-radius: 3px;
     height: 40px;
+    margin: 10px;
 }
 
 .buttons-landing {
-    margin-left: 70px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 @keyframes bola_passando {
@@ -77,12 +77,14 @@
         left: 100%;
     }
 }
+
 .animacao {
     width: 100%;
     height: 100%;
     position: absolute;
     overflow: hidden;
 }
+
 .barras {
     filter: blur(10px);
     z-index: 1;
@@ -93,6 +95,7 @@
     height: 120px;
     border-radius: 50%;
 }
+
 @media screen and (max-width: 1090px) {
     .right-side {
         display: none;
@@ -101,26 +104,40 @@
 
 .main-screen h3 {
     color: white;
+    font-size: 24px;
+    text-align: center;
 }
+
 .main-screen {
     width: 100%;
-    padding: 12%;
+    padding: 12% 5%;
 }
 
 .anime-slide {
     display: grid;
-    grid-template-columns: repeat(7, 14.28%);
+    grid-template-columns: repeat(2, 50%);
+    gap: 10px;
 }
 
 .anime-info-card {
     padding: 10px;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+
 .anime-info-card img {
     width: 100%;
+    max-height: 200px;
+    object-fit: cover;
 }
+
 .anime-info-card p {
     margin-top: 0px;
     color: white;
+    font-size: 14px;
 }

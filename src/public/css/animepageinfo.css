@@ -11,6 +11,7 @@
     justify-content: center;
     display: flex;
 }
+
 .episodes-container {
     margin-top: 30px;
     padding: 20px;
@@ -48,10 +49,8 @@
     height: 100%;
 }
 
-
 .anime-texts h5 {
     margin: 2px;
-
     font-weight: 100;
     color: rgb(98, 236, 98);
 }
@@ -72,7 +71,6 @@
     from {
         background-color: white;
     }
-
     to {
         border-right: transparent;
     }
@@ -110,6 +108,7 @@
     width: 100%;
     padding: 30px;
 }
+
 .banner {
     height: 305px;
     position: absolute;
@@ -152,6 +151,8 @@
         max-width: 100%;
         padding-left: 0px;
         padding: 25px;
+        width: 90%;
+        margin: 0 auto;
     }
 
     .yt-video>iframe {
@@ -178,6 +179,14 @@
     .poster>img {
         width: 225px;
     }
+
+    .episodes-card img {
+        width: 100px;
+    }
+
+    .episodes-container {
+        padding: 10px;
+    }
 }
 
 .episodes-buttons {
@@ -190,9 +199,11 @@
 .episodes-buttons>a {
     width: 70%;
 }
+
 .episodes-buttons>a>button:hover {
     transform: scale(1.1);
 }
+
 .episodes-buttons>a>button {
     transition: all .5s;
     cursor: pointer;
